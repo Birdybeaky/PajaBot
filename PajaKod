@@ -1,0 +1,34 @@
+import random
+
+while True:
+    odpoved = input("Pája: Co mi chceš říct?  ")
+    print("     ")
+    print("Ty: " + odpoved)
+
+    if odpoved == "ahoj":
+        print("Pája: Ahoj")
+    elif "dej" in odpoved and "rad" in odpoved and "ne" not in odpoved:
+        rada = random.randint(1, 3)
+        if rada == 1:
+            print("Pája: Když ti někdo život ničí,") 
+            print("      usměj se a vem ho tyčí.")
+        elif rada == 2:
+            print("Pája: Pokud zhubnout chceš, musíš")
+            print("      vykadit víc, než toho sníš.")
+        elif rada == 3:
+            print("Pája: Mezitím co v noci spíš,")
+            print("      já vykrádám tvoji spíž.")
+    elif "?" in odpoved:
+        print("Pája: Ne")
+    else:
+        cislo = random.randint(1, 3)
+        if cislo == 1:
+            print("Pája: No, to je super,") 
+            print("      ale vůbec mě to nezajímá.")
+        elif cislo == 2:
+            print("Pája: To je taková blbost,")
+            print("      že na to ani neodpovím.")
+        elif cislo == 3:
+            print("Pája: To je tak divná věta,")
+            print("      že mi úplně uvařila hlavu.")
+            print("      (kterou ani nemám)")
