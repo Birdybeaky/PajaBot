@@ -18,6 +18,10 @@ while True:
         elif rada == 3:
             print("Pája: Mezitím co v noci spíš,")
             print("      já vykrádám tvoji spíž.")
+    elif "negr" or "pic" or "vole" or "prdel" or "kokot" in odpoved:
+        print("Pája: Ty jsi ale hnusný sprosťák")
+        print("      s tebou se nebavím.")
+        break
     elif "?" in odpoved:
         print("Pája: Ne")
     else:
