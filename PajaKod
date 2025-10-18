@@ -1,8 +1,7 @@
 import random
-
+print("Pája: Co mi chceš říct?")
 while True:
-    odpoved = input("Pája: Co mi chceš říct?  ")
-    print("     ")
+    odpoved = input()
     print("Ty: " + odpoved)
 
     if odpoved == "ahoj":
@@ -18,7 +17,7 @@ while True:
         elif rada == 3:
             print("Pája: Mezitím co v noci spíš,")
             print("      já vykrádám tvoji spíž.")
-    elif "negr" or "pic" or "vole" or "prdel" or "kokot" in odpoved:
+    elif any(word in odpoved for word in ["negr", "pic", "vole", "prdel", "kokot"]):
         print("Pája: Ty jsi ale hnusný sprosťák")
         print("      s tebou se nebavím.")
         break
