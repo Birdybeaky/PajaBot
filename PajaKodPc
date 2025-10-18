@@ -1,5 +1,6 @@
 import random
 
+
 print("Pája: Co mi chceš říct?")
 
 while True:
@@ -7,6 +8,12 @@ while True:
 
     if odpoved == "ahoj":
         print("Pája: Ahoj")
+    elif not odpoved.islower():
+        print("Systém: Prosím, piš Pájovi malými písmeny.")
+    elif "ě" in odpoved or "š" in odpoved or "č" in odpoved or "ř" in odpoved or "ž" in odpoved or "ý" in odpoved or "á" in odpoved or "í" in odpoved or "é" in odpoved or "ú" in odpoved or "ů" in odpoved:
+        print("Systém: Prosím, piš Pájovi bez háčků a čárek.")
+    elif not "." in odpoved and not "!" in odpoved and not "?" in odpoved:
+        print("Systém: Prosím, ukonči větu tečkou, vykřičníkem nebo otazníkem.")
     elif "dej" in odpoved and "rad" in odpoved and "ne" not in odpoved:
         rada = random.randint(1, 3)
         if rada == 1:
@@ -18,12 +25,17 @@ while True:
         elif rada == 3:
             print("Pája: Mezitím co v noci spíš,")
             print("      já vykrádám tvoji spíž.")
-    elif any(word in odpoved for word in ["negr", "pic", "vole", "prdel", "kokot"]):
+    elif any(word in odpoved for word in ["negr", "pic", "vole", "prdel", "kokot", "kurv", "zmrd", "hovno"]):
         print("Pája: Ty jsi ale hnusný sprosťák")
         print("      s tebou se nebavím.")
         break
     elif "?" in odpoved:
-        print("Pája: Ne")
+        if "kolik" in odpoved:
+            print("Pája: Pět a půl.")
+        elif "kdo" in odpoved:
+            print("Pája: Petr")
+        else:
+            print("Pája: Ne")
     else:
         cislo = random.randint(1, 3)
         if cislo == 1:
