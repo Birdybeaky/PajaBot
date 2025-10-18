@@ -36,7 +36,7 @@ def respond(odpoved: str) -> str:
         return "Pája: Ahoj"
 
     if odpoved == "jsi gay?":
-        return "Pája:: Já ne, ale Majkl ano."
+        return "Pája:: Já ne, ale Pepa z malého městečka pulhřimov ano."
 
     # check for lowercase requirement (same as original)
     if not odpoved.islower():
