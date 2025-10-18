@@ -18,7 +18,7 @@ while True:
         elif rada == 3:
             print("Pája: Mezitím co v noci spíš,")
             print("      já vykrádám tvoji spíž.")
-    elif "negr" or "pic" or "vole" or "prdel" or "kokot" in odpoved:
+    elif any(word in odpoved for word in ["negr", "pic", "vole", "prdel", "kokot"]):
         print("Pája: Ty jsi ale hnusný sprosťák")
         print("      s tebou se nebavím.")
         break
