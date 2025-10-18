@@ -1,10 +1,12 @@
 import random
-print("Pája: Co mi chceš říct?")
-while True:
-    odpoved = input()
-    print("Ty: " + odpoved)
 
-   if odpoved == "ahoj":
+
+print("Pája: Co mi chceš říct?")
+
+while True:
+    odpoved = input("Ty: ")
+
+    if odpoved == "ahoj":
         print("Pája: Ahoj")
     elif not odpoved.islower():
         print("Systém: Prosím, piš Pájovi malými písmeny.")
@@ -32,8 +34,12 @@ while True:
             print("Pája: Pět a půl.")
         elif "kdo" in odpoved:
             print("Pája: Petr")
+        elif "jak" in odpoved and not "jaky" in odpoved and not "jaka" in odpoved and not "jake" in odpoved:
+            print("Pája: Nějak.")
         else:
-            print("Pája: Ne")
+            print("Pája: Na hloupé otázky jsou hloupé odpovědi.")
+            print("      Takže tohle je má odpověď:")
+            print("      Když ryje krtek v dubnu, bude pršet v březnu.")
     else:
         cislo = random.randint(1, 3)
         if cislo == 1:
