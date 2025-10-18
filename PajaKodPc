@@ -15,7 +15,7 @@ while True:
     elif not "." in odpoved and not "!" in odpoved and not "?" in odpoved:
         print("Systém: Prosím, ukonči větu tečkou, vykřičníkem nebo otazníkem.")
     elif odpoved == "jsi gay?":
-        print("Pája: Já ne, ale Majkl ano")
+        print("Pája: Já ne, ale Pepa z malého městečka pulhřimov ano")
     elif "dej" in odpoved and "rad" in odpoved and "ne" not in odpoved:
         rada = random.randint(1, 3)
         if rada == 1:
