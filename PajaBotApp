@@ -69,7 +69,9 @@ def respond(odpoved: str) -> str:
 
     # questions
     if "?" in odpoved:
-        if "kolik" in low:
+        if "co" in low and "je" in low:
+            return "Pája: To je něco, čemu nerozumím."
+        elif "kolik" in low:
             return "Pája: Pět a půl."
         elif "kdo" in low:
             return "Pája: Petr."
