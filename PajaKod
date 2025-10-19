@@ -33,6 +33,8 @@ while True:
         print("      s tebou se nebavím.")
         break
     elif "?" in odpoved:
+         elif "co" in odpoved and "je" in odpoved:
+            print("Pája: To je něco, čemu nerozumím.")
         if "kolik" in odpoved:
             print("Pája: Pět a půl.")
         elif "kdo" in odpoved:
