@@ -5,7 +5,7 @@ print("Pája: Co mi chceš říct?")
 
 while True:
     odpoved = input("     ")
-    print("Ty: ")
+    print("Ty: "+odpoved)
 
     if odpoved == "ahoj":
         print("Pája: Ahoj")
