@@ -4,7 +4,8 @@ import random
 print("Pája: Co mi chceš říct?")
 
 while True:
-    odpoved = input("Ty: ")
+    odpoved = input("     ")
+    print("Ty: ")
 
     if odpoved == "ahoj":
         print("Pája: Ahoj")
