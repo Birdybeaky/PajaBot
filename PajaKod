@@ -7,8 +7,8 @@ while True:
     odpoved = input("     ")
     print("Ty: "+odpoved)
 
-    if odpoved == "ahoj":
-        print("Pája: Ahoj")
+   if odpoved == "ahoj" or odpoved == "cus" or odpoved == "cau" or odpoved == "nazdar" or odpoved == "hello":
+        print("Pája: " + odpoved.capitalize())
     elif not odpoved.islower():
         print("Systém: Prosím, piš Pájovi malými písmeny.")
     elif "ě" in odpoved or "š" in odpoved or "č" in odpoved or "ř" in odpoved or "ž" in odpoved or "ý" in odpoved or "á" in odpoved or "í" in odpoved or "é" in odpoved or "ú" in odpoved or "ů" in odpoved:
