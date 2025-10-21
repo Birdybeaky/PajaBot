@@ -6,8 +6,14 @@ print("Pája: Co mi chceš říct?")
 while True:
     odpoved = input("Ty: ")
 
-    if odpoved == "ahoj":
-        print("Pája: Ahoj")
+    if "martyn" in odpoved:
+        return "Pája: Ne! Topytle! Ma tšečtina se vypařuje kdiz o nem mluvýš!" 
+    if "majkl" in odpoved:
+        return "Pája: Ne! Dopytle! Mám zabrané všechno místo na disku!"
+    if odpoved == "":
+        return "Systém: Napiš něco prosím."
+   if odpoved == "ahoj" or odpoved == "cus" or odpoved == "cau" or odpoved == "nazdar" or odpoved == "hello":
+        print("Pája: " + odpoved.capitalize())
     elif not odpoved.islower():
         print("Systém: Prosím, piš Pájovi malými písmeny.")
     elif "ě" in odpoved or "š" in odpoved or "č" in odpoved or "ř" in odpoved or "ž" in odpoved or "ý" in odpoved or "á" in odpoved or "í" in odpoved or "é" in odpoved or "ú" in odpoved or "ů" in odpoved:
@@ -15,7 +21,7 @@ while True:
     elif not "." in odpoved and not "!" in odpoved and not "?" in odpoved:
         print("Systém: Prosím, ukonči větu tečkou, vykřičníkem nebo otazníkem.")
     elif odpoved == "jsi gay?":
-        print("Pája: Já ne, ale Pepa z malého městečka pulhřimov ano")
+        print("Pája: Já ne, ale Pepa z malého městečka pulhřimov ano.")
     elif "dej" in odpoved and "rad" in odpoved and "ne" not in odpoved:
         rada = random.randint(1, 3)
         if rada == 1:
@@ -32,7 +38,9 @@ while True:
         print("      s tebou se nebavím.")
         break
     elif "?" in odpoved:
-        if "kolik" in odpoved:
+        if "co" in odpoved and "je" in odpoved:
+            print("Pája: To je něco, čemu nerozumím.")
+        elif "kolik" in odpoved:
             print("Pája: Pět a půl.")
         elif "kdo" in odpoved:
             print("Pája: Petr")
