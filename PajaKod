@@ -8,11 +8,11 @@ while True:
     print("Ty: "+odpoved)
 
     if "martyn" in odpoved:
-        return "Pája: Ne! Topytle! Ma tšečtina se vypařuje kdiz o nem mluvýš!" 
+        print("Pája: Ne! Topytle! Ma tšečtina se vypařuje kdiz o nem mluvýš!") 
     if "majkl" in odpoved:
-        return "Pája: Ne! Dopytle! Mám zabrané všechno místo na disku!"
+        print("Pája: Ne! Dopytle! Mám zabrané všechno místo na disku!")
     if odpoved == "":
-        return "Systém: Napiš něco prosím."
+        print("Systém: Napiš něco prosím.")
     if odpoved == "ahoj" or odpoved == "cus" or odpoved == "cau" or odpoved == "nazdar" or odpoved == "hello":
         print("Pája: " + odpoved.capitalize())
     elif not odpoved.islower():
