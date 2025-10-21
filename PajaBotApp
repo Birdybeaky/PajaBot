@@ -28,15 +28,18 @@ def respond(odpoved: str) -> str:
     This preserves the original lowercase/uppercase check behavior from your console bot.
     """
     odpoved = odpoved.strip()
+    if "martyn" in odpoved:
+        return "Pája: Ne! Topytle! Ma tšečtina se vypařuje kdiz o nem mluvýš!"
+    
+    if "majkl" in odpoved:
+        return "Pája: Ne! Dopytle! Mám zabrané všechno místo na disku!"
+    
     if odpoved == "":
         return "Systém: Napiš něco prosím."
 
     # exact match greeting (preserve original behavior)
-    if odpoved == "ahoj":
-        return "Pája: Ahoj"
-
-    if odpoved == "jsi gay?":
-        return "Pája:: Já ne, ale Pepa z malého městečka pulhřimov ano."
+    if odpoved == "ahoj" or odpoved == "cus" or odpoved == "cau" or odpoved == "nazdar" or odpoved == "hello":
+        return "Pája: " + odpoved.capitalize()
 
     # check for lowercase requirement (same as original)
     if not odpoved.islower():
@@ -74,7 +77,7 @@ def respond(odpoved: str) -> str:
         elif "kolik" in low:
             return "Pája: Pět a půl."
         elif "kdo" in low:
-            return "Pája: Petr."
+            return "Pája: Karel."
         elif "jak" in low and not "jaky" in low and not "jaka" in low and not "jake" in low:
             return "Pája: Nějak."
         else:
