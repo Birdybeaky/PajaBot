@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 
 
-
 import random
 import tkinter as tk
 from tkinter import scrolledtext
+
 
 # Characters with diacritics to reject (keeps behavior similar to original script)
 DIACRITICS = set("ěščřžýáíéúůťňďĚŠČŘŽÝÁÍÉÚŮŤŇĎ")
@@ -85,9 +85,10 @@ def respond(odpoved: str) -> str:
 class PajaApp:
     def __init__(self, root):
         self.root = root
-        root.iconbitmap("pja.ico")
         root.title("Pája")
         root.resizable(False, False)
+        self.root.iconphoto(False, tk.PhotoImage(file='pja.png'))
+        
 
         self.chat = scrolledtext.ScrolledText(root, width=60, height=20, wrap=tk.WORD, state=tk.DISABLED)
         self.chat.grid(row=0, column=0, columnspan=2, padx=8, pady=8)
