@@ -1,15 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-Pája GUI version of your console bot.
 
-Save as PajaKodPc_gui.py and run:
-  python3 PajaKodPc_gui.py
-
-If tkinter is missing on Linux:
-  sudo apt install python3-tk
-"""
 
 import random
 import tkinter as tk
@@ -17,7 +9,7 @@ from tkinter import scrolledtext
 
 # Characters with diacritics to reject (keeps behavior similar to original script)
 DIACRITICS = set("ěščřžýáíéúůťňďĚŠČŘŽÝÁÍÉÚŮŤŇĎ")
-INSULTS = ["negr", "pic", "vole", "prdel", "kokot", "kurv", "zmrd", "hovno","tux"]
+INSULTS = ["negr", "pic", "vole", "prdel", "kokot", "kurv", "zmrd", "hovno","tux","debil"]
 
 def has_diacritics(s: str) -> bool:
     return any(ch in DIACRITICS for ch in s)
@@ -28,6 +20,7 @@ def respond(odpoved: str) -> str:
     This preserves the original lowercase/uppercase check behavior from your console bot.
     """
     odpoved = odpoved.strip()
+    odpoved = odpoved.lower()
     if "martyn" in odpoved:
         return "Pája: Ne! Topytle! Ma tšečtina se vypařuje kdiz o nem mluvýš!"
     
@@ -40,10 +33,6 @@ def respond(odpoved: str) -> str:
     # exact match greeting (preserve original behavior)
     if odpoved == "ahoj" or odpoved == "cus" or odpoved == "cau" or odpoved == "nazdar" or odpoved == "hello":
         return "Pája: " + odpoved.capitalize()
-
-    # check for lowercase requirement (same as original)
-    if not odpoved.islower():
-        return "Systém: Prosím, piš Pájovi malými písmeny."
 
     # check diacritics on the original text
     if has_diacritics(odpoved):
