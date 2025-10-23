@@ -85,6 +85,7 @@ def respond(odpoved: str) -> str:
 class PajaApp:
     def __init__(self, root):
         self.root = root
+        root.iconbitmap("pja.ico")
         root.title("Pája")
         root.resizable(False, False)
 
