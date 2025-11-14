@@ -125,7 +125,24 @@ while True:
 
     # fallback pro otázky, které nejsou známé
     elif "?" in odpoved:
-        print("Pája: To je zajímavá otázka, ale nevím přesně. Můj mozek je jen Python.")
+        if "co" in odpoved and "je" in odpoved:
+            print("Pája: To je něco, čemu nerozumím.")
+        elif "kolik" in odpoved:
+            print("Pája: Pět a půl.")
+        elif "kdo" in odpoved:
+            print("Pája: Petr")
+        elif "jak" in odpoved and not "jaky" in odpoved and not "jaka" in odpoved and not "jake" in odpoved:
+            print("Pája: Nějak.")
+        else:
+            print("Pája: Na hloupé otázky jsou hloupé odpovědi.")
+            print("      Takže tohle je má odpověď:")
+            cislo = random.randint(1, 3)
+            if cislo == 1:
+                print("      Omlouvám se ale snědl jsem tvou odpověď.")
+            elif cislo == 2:
+                print("      Myslím, že odpověď na tvou otázku jsem zakopal na tvé zahradě :D")
+            elif cislo == 3:
+                print("      Když ryje krtek v dubnu, bude pršet v březnu.")
 
     # fallback pro věty, které nejsou otázky
     else:
