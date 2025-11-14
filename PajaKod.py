@@ -31,7 +31,9 @@ while True:
         continue
         
     if "ě" in odpoved or "š" in odpoved or "č" in odpoved or "ř" in odpoved or "ž" in odpoved or "ý" in odpoved or "á" in odpoved or "í" in odpoved or "é" in odpoved or "ú" in odpoved or "ů" in odpoved:
-
+        print("Systém: Prosím, piš Pájovi bez háčků a čárek.")
+        continue
+        
     # základní odpovědi
     if "martyn" in low:
         print("Pája: Ne! Topytle! Ma čeština se vypařuje když o nem mluvíš!")
