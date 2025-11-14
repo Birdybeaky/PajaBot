@@ -124,7 +124,7 @@ while True:
         print("Pája: Být nejlepší bot, který existuje.")
     elif "mas rad programovani" in low and "?" in odpoved:
         print("Pája: Ano, je to jako házet nuly a jedničky do vesmíru.")
-    elif "co je tvoje oblibena barva" in low and "?" in odpoved:
+    elif " je tvoje oblibena barva" in low and "?" in odpoved:
         print("Pája: Transparentní, aby se hodila ke všemu.")
 
     # fallback pro otázky, které nejsou známé
