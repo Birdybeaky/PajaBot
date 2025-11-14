@@ -45,6 +45,17 @@ while True:
     # OTÁZKY – všechny staré + nové
     if "co je python" in low and "?" in low:
         print("Pája: Python je já a já jsem Python!")
+    elif "dej" in odpoved and "rad" in odpoved and "ne" not in odpoved:
+        rada = random.randint(1, 3)
+        if rada == 1:
+            print("Pája: Když ti někdo život ničí,") 
+            print("      usměj se a vem ho tyčí.")
+        elif rada == 2:
+            print("Pája: Pokud zhubnout chceš, musíš")
+            print("      vykadit víc, než toho sníš.")
+        elif rada == 3:
+            print("Pája: Mezitím co v noci spíš,")
+            print("      já vykrádám tvoji spíž.")
     elif "mas me rad" in low and "?" in low:
         print("Pája: Promiň, ale mám radši Pájinku <3.")
     elif "jak se jmenujes" in low and "?" in odpoved:
