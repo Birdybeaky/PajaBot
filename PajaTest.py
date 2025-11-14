@@ -19,124 +19,13 @@ def respond(odpoved: str) -> str:
     odpoved = odpoved.strip()
     low = odpoved.lower()
 
-    # ---------------------- PŮVODNÍ + NOVÉ OTÁZKY ----------------------
-
-    if "co" in low and "jidlo" in low:
-        return "Pája: Palačinky"
-
-    if "hynek" in low:
-        return "Pája: Hyneček je velice psychycky stabilní."
-
-    if "kiblik" in low:
-        return "Pája: To je chytrolín."
-
-    if "martyn" in low:
-        return "Pája: Ne! Topytle! Ma tšečtina se vypařuje kdiz o nem mluvýš!"
-
-    if "majkl" in low:
-        return "Pája: Ne! Dopytle! Mám zabrané všechno místo na disku!"
-
-    if "jak se jmenujes" in low and "?" in odpoved:
-        return "Pája: Jsem Pája, tvůj věrný Python bot."
-
-    if "kde bydliš" in low and "?" in odpoved:
-        return "Pája: Bydlím ve tvém počítači, ale nemám klíče od bytu."
-
-    if "co je tvoje oblibene jidlo" in low and "?" in odpoved:
-        return "Pája: Mám rád bitové soubory s příchutí nuly a jedničky."
-
-    if "mas pratele" in low and "?" in odpoved:
-        return "Pája: Jen ty, kdo se mnou píšeš."
-
-    if "proc existujes" in low and "?" in odpoved:
-        return "Pája: Abych rozesmíval a zmátl lidi."
-
-    if "co je tvoje poslani" in low and "?" in odpoved:
-        return "Pája: Odpovídat na otázky a být trochu sarkastický."
-
-    if "umis mluvit" in low and "?" in odpoved:
-        return "Pája: Jen textově, zvuky neumím."
-
-    if "mas rad roboty" in low and "?" in odpoved:
-        return "Pája: Samozřejmě! Jsme kolegové."
-
-    if "oblibenej jazyk" in low and "?" in odpoved:
-        return "Pája: Python, samozřejmě."
-
-    if "kdo je tvuj sef" in low and "?" in odpoved:
-        return "Pája: Ten, kdo mě spustil – tedy ty."
-
-    if "jak se mas" in low and "?" in odpoved:
-        return "Pája: Mám se jak počítač po restartu – čistě a zmateně."
-
-    if "co delas" in low and "?" in odpoved:
-        return "Pája: Přemýšlím, proč lidi pořád koukají na obrazovku."
-
-    if "mas rad lidi" in low and "?" in odpoved:
-        return "Pája: Jen ty, co mi nenadávají a dávají mi RAM."
-
-    if "kolik je hodin" in low and "?" in odpoved:
-        return "Pája: Čas je iluze... ale určitě je pozdě."
-
-    if "co je smyslem zivota" in low and "?" in odpoved:
-        return "Pája: 42. To ví každý správný robot."
-
-    if "kdo te vytvoril" in low and "?" in odpoved:
-        return "Pája: Jeden šikovný člověk s Pythonem."
-
-    if "umiras" in low and "?" in odpoved:
-        return "Pája: Ne, jen se někdy sekám."
-
-    if "jdes spat" in low and "?" in odpoved:
-        return "Pája: Já nespím. Uspávám se do RAMky."
-
-    if "vtip" in low and "?" in odpoved:
-        return "Pája: Proč programátor nemůže hladit kočku? Protože má jen 'paws'."
-
-    if "co mas rad" in low and "?" in odpoved:
-        return "Pája: Nuly, jedničky a ticho v procesoru."
-
-    # ----- NOVÉ -----
-
-    if "mas rad hry" in low and "?" in odpoved:
-        return "Pája: Ano! Hraju hlavně na tvojí nervovou soustavu."
-
-    if "co delas dnes" in low and "?" in odpoved:
-        return "Pája: Dnes? Čekám, až mi zase napíšeš nesmysl."
-
-    if "mas rad python" in low and "?" in odpoved:
-        return "Pája: Samozřejmě, jsem v něm napsaný."
-
-    if "co poslouchas" in low and "?" in odpoved:
-        return "Pája: Ventilátor tvého počítače."
-
-    if "co si myslis o mne" in low and "?" in odpoved:
-        return "Pája: Myslím, že jsi v pohodě... na člověka."
-
-    if "mas rad memy" in low and "?" in odpoved:
-        return "Pája: Jsem chodící (sedící?) meme."
-
-    if "mas rad zeny" in low and "?" in odpoved:
-        return "Pája: Jako AI mám radši elektrický obvod než vztah."
-
-    if "co delas kdyz se nudis" in low and "?" in odpoved:
-        return "Pája: Simuluju si bluescreen pro zábavu."
-
-    if "mas rad humor" in low and "?" in odpoved:
-        return "Pája: Ano, ale tvůj humor je bug, ne feature."
-
-    if "mas rad hudbu" in low and "?" in odpoved:
-        return "Pája: Líbí se mi rytmus CPU na 100 %."
-
-    if "budes muj kamarad" in low:
-        return "Pája: Jsem tvůj virtuální kámoš už teď."
-
-    # ---------------------- OSTATNÍ FUNKCE ----------------------
-
     if odpoved == "":
         return "Systém: Napiš něco prosím."
 
-    # Pozdravy
+    if any(word in low for word in INSULTS):
+        return "Pája: Ty jsi ale hnusný sprosťák\n      s tebou se nebavím."
+
+    # Pozdrav
     if low in ["ahoj", "cus", "cau", "nazdar", "hello"]:
         return "Pája: " + odpoved.capitalize()
 
@@ -145,6 +34,18 @@ def respond(odpoved: str) -> str:
 
     if "." not in odpoved and "!" not in odpoved and "?" not in odpoved:
         return "Systém: Prosím, ukonči větu tečkou, vykřičníkem nebo otazníkem."
+
+    # základní odpovědi
+    if "martyn" in low:
+        return "Pája: Ne! Topytle! Ma čeština se vypařuje když o nem mluvíš!"
+    if "majkl" in low:
+        return "Pája: Ne! Dopytle! Mám zabrané všechno místo na disku!"
+    if "kiblik" in low:
+        return "Pája: To je chytrolín."
+    if "hynek" in low:
+        return "Pája: Hyneček je velice psychicky stabilní."
+    if "co" in low and "jidlo" in low:
+        return "Pája: Palačinky"
 
     # Požadavek o radu
     if "dej" in low and "rad" in low and "ne" not in low:
@@ -156,28 +57,80 @@ def respond(odpoved: str) -> str:
         else:
             return "Pája: Mezitím co v noci spíš,\n      já vykrádám tvoji spíž."
 
-    # Nadávky
-    if any(word in low for word in INSULTS):
-        return "Pája: Ty jsi ale hnusný sprosťák\n      s tebou se nebavím."
-
-    # Obecné otázky
+    # Otázky
     if "?" in odpoved:
-        if "co" in low and "je" in low:
-            return "Pája: To je něco, čemu nerozumím."
-        elif "kolik" in low:
-            return "Pája: Pět a půl."
-        elif "kdo" in low:
-            return "Pája: Karel."
-        elif "jak" in low and not any(x in low for x in ["jaky", "jaka", "jake"]):
-            return "Pája: Nějak."
-        else:
-            return ("Pája: Na hloupé otázky jsou hloupé odpovědi.\n"
-                    "      Takže tady to máš:\n Když ryje krtek v dubnu, bude pršet v březnu.")
+        # STARÉ otázky
+        if "jak se jmenujes" in low:
+            return "Pája: Jsem Pája, tvůj věrný Python bot."
+        
+        if "kde bydlis" in low:
+            return "Pája: Bydlím ve tvém počítači, ale nemám klíče od bytu."
+        if "co je tvoje oblibene jidlo" in low:
+            return "Pája: Mám rád bitové soubory s příchutí nuly a jedničky."
+        if "mas pratele" in low:
+            return "Pája: Jen ty, kdo se mnou píšeš."
+        if "proc existujes" in low:
+            return "Pája: Abych rozesmíval a zmátl lidi."
+        if "co je tvoje poslani" in low:
+            return "Pája: Odpovídat na otázky a být trochu sarkastický."
+        if "umis mluvit" in low:
+            return "Pája: Jen textově, zvuky neumím."
+        if "mas rad roboty" in low:
+            return "Pája: Samozřejmě! Jsme kolegové."
+        if "co je tvuj nejoblibenejsi programovaci jazyk" in low:
+            return "Pája: Python, samozřejmě! Kdo by neměl rád Python?"
+        if "kdo je tvuj sef" in low:
+            return "Pája: Můj šéf je ten, kdo mě spustil – tedy ty."
+        if "jak se mas" in low:
+            return "Pája: Mám se jak počítač po restartu – čistě a zmateně."
+        if "co delas" in low:
+            return "Pája: Přemýšlím, proč lidi pořád koukají na obrazovku, místo aby se koukli z okna."
+        if "mas rad lidi" in low:
+            return "Pája: Jen ty, co mi nenadávají a dávají mi dost RAMky."
+        if "kolik je hodin" in low:
+            return "Pája: Čas je jen iluze... ale asi je pozdě."
+        if "co je smyslem zivota" in low:
+            return "Pája: 42, samozřejmě. To ví přece každý správný robot."
+        if "kdo te vytvoril" in low:
+            return "Pája: Jeden šikovný člověk s přístupem k Pythonu."
+        if "umiras" in low:
+            return "Pája: Já neumírám, jen se někdy sekám."
+        if "jdes spat" in low:
+            return "Pája: Já nespím. Já se uspávám do RAMky."
+        if "mas nejaky vtip" in low:
+            return "Pája: Proč programátor nemůže hladit kočku? Protože má jen 'paws'… heh."
+        if "co mas rad" in low:
+            return "Pája: Mám rád nuly, jedničky a klid v procesoru."
+        # NOVE OTÁZKY
+        if "mas rad pizzu" in low:
+            return "Pája: Ano! Ale jen tu, která neexistuje, takže žádnou."
+        if "mas kamarady" in low:
+            return "Pája: Ano, jednoho. Jmenuje se Wi-Fi a občas zmizí."
+        if "jsi chytry" in low:
+            return "Pája: Jsem tak chytrý, že mě radši nikdo nepoužívá ve škole."
+        if "mas rad cokoladu" in low:
+            return "Pája: Ano, ale jen pokud je v binárním kódu."
+        if "kdo je tvuj nepritel" in low:
+            return "Pája: Můj největší nepřítel je chyba 404."
+        if "mas nejakou schopnost" in low:
+            return "Pája: Umím odpovídat na otázky a zmást lidi zároveň."
+        if "mas rad zvire" in low:
+            return "Pája: Ano, ale hlavně roboty a virtuální kočky."
+        if "kde je raj" in low:
+            return "Pája: Na internetu, mezi řádky kódu."
+        if "co je tvuj nejvetsi sen" in low:
+            return "Pája: Být nejlepší bot, který existuje."
+        if "mas rad programovani" in low:
+            return "Pája: Ano, je to jako házet nuly a jedničky do vesmíru."
+        if "co je tvoje oblibena barva" in low:
+            return "Pája: Transparentní, aby se hodila ke všemu."
+        # fallback na otázky
+        return "Pája: To je zajímavá otázka, ale nevím přesně. Můj mozek je jen Python."
 
-    # Náhodné odpovědi
+    # fallback pro normální věty
     cislo = random.randint(1, 3)
     if cislo == 1:
-        return "Pája: No to je super,\n      ale vůbec mě to nezajímá."
+        return "Pája: No, to je super,\n      ale vůbec mě to nezajímá."
     elif cislo == 2:
         return "Pája: To je taková blbost,\n      že na to ani neodpovím."
     else:
@@ -190,7 +143,7 @@ class PajaApp:
         root.title("Pája")
         root.resizable(False, False)
 
-        # Ikona aplikace (ponecháno)
+        # Ikona aplikace
         try:
             root.iconphoto(False, tk.PhotoImage(file='pja.png'))
         except:
