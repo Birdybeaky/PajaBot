@@ -29,6 +29,8 @@ while True:
     if not any(x in odpoved for x in [".", "!", "?"]):
         print("Systém: Prosím, ukonči větu tečkou, vykřičníkem nebo otazníkem.")
         continue
+        
+    if "ě" in odpoved or "š" in odpoved or "č" in odpoved or "ř" in odpoved or "ž" in odpoved or "ý" in odpoved or "á" in odpoved or "í" in odpoved or "é" in odpoved or "ú" in odpoved or "ů" in odpoved:
 
     # základní odpovědi
     if "martyn" in low:
