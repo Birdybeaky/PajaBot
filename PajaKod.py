@@ -45,6 +45,8 @@ while True:
     # OTÁZKY – všechny staré + nové
     if "co je python" in low and "?" in low:
         print("Pája: Python je já a já jsem Python!")
+    elif "mas me rad" in low and "?" in low:
+        print("Pája: Promiň, ale mám radši Pájinku <3.")
     elif "jak se jmenujes" in low and "?" in odpoved:
         print("Pája: Jsem Pája, tvůj věrný Python bot.")
     elif "kde bydlis" in low and "?" in odpoved:
